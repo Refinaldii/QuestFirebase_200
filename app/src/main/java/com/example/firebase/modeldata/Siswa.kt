@@ -4,4 +4,5 @@ package com.example.firebase.modeldata
 data class Siswa (
     val id : Long = 0,
     val nama : String = "",
+    val alamat : String = "",
 )
