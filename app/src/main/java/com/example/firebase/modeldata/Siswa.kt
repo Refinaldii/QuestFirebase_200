@@ -9,5 +9,5 @@ data class Siswa (
 )
 
 data class DetailSiswa (
-
+    val id : Long = 0,
 )
