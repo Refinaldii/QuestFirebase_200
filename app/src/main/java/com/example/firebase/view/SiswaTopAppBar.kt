@@ -1,7 +1,8 @@
+
 package com.example.firebase.view
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -16,27 +17,23 @@ import com.example.firebase.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SiswaTopAppBar(
-    title : String,
-    canNavigateback : Boolean,
+    title: String,
+    canNavigateBack: Boolean,
     modifier: Modifier = Modifier,
     scrollBehavior: TopAppBarScrollBehavior? = null,
-    navigateUp : () -> Unit = {}
+    navigateUp: () -> Unit = {}
 ) {
-
-    CenterAlignedTopAppBar(
-        title = { Text(text = title)},
+    CenterAlignedTopAppBar(title = { Text(title) },
         modifier = modifier,
         scrollBehavior = scrollBehavior,
         navigationIcon = {
-            if (canNavigateback) {
+            if (canNavigateBack) {
                 IconButton(onClick = navigateUp) {
                     Icon(
-                        imageVector = Icons.Filled.ArrowBack,
-                        contentDescription = stringResource(id = R.string.back)
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = stringResource(R.string.back)
                     )
                 }
             }
-        }
-    )
-
+        })
 }
